@@ -65,7 +65,7 @@ jobs:
               -v "${{ github.workspace }}/bin:/builder/bin" \
               -v "${{ github.workspace }}/files:/builder/files" \
               -v "${{ github.workspace }}/x86-64/imm.config:/builder/.config" \
-              -v "${{ github.workspace }}/x86-64/24.10/setup.sh:/builder/build.sh" \
+              -v "${{ github.workspace }}/x86-64/setup.sh:/builder/build.sh" \
               -e PROFILE=$profile \
               -e INCLUDE_DOCKER=$include_docker \
               -e ENABLE_PPPOE=${{ inputs.enable_pppoe }} \
