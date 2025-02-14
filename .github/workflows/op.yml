@@ -63,10 +63,10 @@ jobs:
             
             docker run --rm -i \
               --user root \
-              -v "${{ github.workspace }}/bin:/home/build/openwrt/bin" \
-              -v "${{ github.workspace }}/files:/home/build/openwrt/files" \
-              -v "${{ github.workspace }}/x86-64/imm.config:/home/build/openwrt/.config" \
-              -v "${{ github.workspace }}/x86-64/24.10/build.sh:/builder/build.sh" \
+              -v "${{ github.workspace }}/bin:/builder/bin" \
+              -v "${{ github.workspace }}/files:/builder/files" \
+              -v "${{ github.workspace }}/x86-64/imm.config:/builder/.config" \
+              -v "${{ github.workspace }}/x86-64/24.10/setup.sh:/builder/build.sh" \
               -e PROFILE=$profile \
               -e INCLUDE_DOCKER=$include_docker \
               -e ENABLE_PPPOE=${{ inputs.enable_pppoe }} \
