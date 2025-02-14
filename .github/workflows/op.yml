@@ -64,7 +64,7 @@ jobs:
               --user root \
               -v "${{ github.workspace }}/bin:/builder/bin" \
               -v "${{ github.workspace }}/files:/builder/files" \
-              -v "${{ github.workspace }}/x86-64/imm.config:/builder/.config" \
+              -v "${{ github.workspace }}/x86-64/opconfig.config:/builder/.config" \
               -v "${{ github.workspace }}/x86-64/setup.sh:/builder/build.sh" \
               -e PROFILE=$profile \
               -e INCLUDE_DOCKER=$include_docker \
