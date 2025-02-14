@@ -66,13 +66,13 @@ jobs:
               -v "${{ github.workspace }}/bin:/home/build/openwrt/bin" \
               -v "${{ github.workspace }}/files:/home/build/openwrt/files" \
               -v "${{ github.workspace }}/x86-64/imm.config:/home/build/openwrt/.config" \
-              -v "${{ github.workspace }}/x86-64/24.10/build.sh:/home/build/openwrt/build.sh" \
+              -v "${{ github.workspace }}/x86-64/24.10/build.sh:/builder/build.sh" \
               -e PROFILE=$profile \
               -e INCLUDE_DOCKER=$include_docker \
               -e ENABLE_PPPOE=${{ inputs.enable_pppoe }} \
               -e PPPOE_ACCOUNT=${{ inputs.pppoe_account }} \
               -e PPPOE_PASSWORD=${{ inputs.pppoe_password }} \
-              openwrt/imagebuilder:x86-64-openwrt-24.10 /bin/bash /home/build/openwrt/build.sh
+              openwrt/imagebuilder:x86-64-openwrt-24.10 /bin/bash /builder/build.sh
           done
 
       - name: Generate Firmware SHA-256
